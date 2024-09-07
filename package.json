@@ -1,0 +1,23 @@
+{
+  "name": "progress-builder-backend",
+  "version": "1.0.0",
+  "description": "Aplicacion destinada a registrar los avances de una obra en construccion",
+  "main": "app.js",
+  "scripts": {
+    "test": "run-test",
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "progress-builder-backend"
+  },
+  "author": "Elkin Hurtado",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
