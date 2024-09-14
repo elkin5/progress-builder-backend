@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const sequelize = require('../../database/sequelize');
+const sequelize = require('../../config/sequelize');
 
 describe('sequelize', () => {
     it('debería conectarse exitosamente a la base de datos', async () => {

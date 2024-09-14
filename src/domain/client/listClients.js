@@ -1,4 +1,4 @@
-const Client = require('../../model/Client');
+const Client = require('../../DAO/Client');
 
 async function listClients(req, res) {
     try {

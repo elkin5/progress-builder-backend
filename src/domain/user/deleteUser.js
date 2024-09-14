@@ -1,4 +1,4 @@
-const User = require('../../model/User');
+const User = require('../../DAO/User');
 
 async function deleteUser(req, res) {
     const { id } = req.params;

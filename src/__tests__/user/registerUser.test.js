@@ -1,7 +1,7 @@
 const { registerUser } = require('../../domain/user/registerUser');
-const User = require('../../model/User');
+const User = require('../../DAO/User');
 
-jest.mock('../../model/User'); // Mock del modelo User para que no interactúe con la BD
+jest.mock('../../DAO/User'); // Mock del modelo User para que no interactúe con la BD
 
 describe('registerUser', () => {
     afterEach(() => {

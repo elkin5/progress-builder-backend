@@ -1,4 +1,4 @@
-const User = require('../../model/User');
+const User = require('../../DAO/User');
 const bcrypt = require('bcryptjs');
 
 async function registerUser(req, res) {

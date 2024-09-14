@@ -1,9 +1,9 @@
 const { loginUser } = require('../../domain/user/loginUser');
-const User = require('../../model/User');
+const User = require('../../DAO/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-jest.mock('../../model/User');
+jest.mock('../../DAO/User');
 jest.mock('bcryptjs');
 jest.mock('jsonwebtoken');
 
