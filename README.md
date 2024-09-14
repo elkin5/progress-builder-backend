@@ -11,30 +11,43 @@ Nodejs con Express
 - sequelize: ORM
 - pg-hstore: Manejo de clave valor en un campo postgres
 
-### Estructura del proyecto
+### Estructura de Archivos del Proyecto
 ```
-progress-builder-backend/
-│
-├── src/
-│   ├── app.js
-│   ├── domain/
-│   │   ├── user/
-│   │   │   ├── deleteUser.js
-│   │   │   ├── listUsers.js
-│   │   │   ├── loginUser.js
-│   │   │   ├── registerUser.js
-│   │   │   └── updateUser.js
-│   ├── models/
-│   │   └── User.js
-│   └── database/
-│       └── sequelize.js
-├── package.json
-└── package-lock.json
+📦 progress-builder-backend  
+├── 📁 src  
+│   ├── 📁 database  
+│   │   └── 📝 sequelize.js  
+│   ├── 📁 domain  
+│   │   ├── 📁 client  
+│   │   │   ├── 📝 registerClient.js  
+│   │   │   ├── 📝 updateClient.js  
+│   │   │   ├── 📝 listClients.js  
+│   │   │   └── 📝 deleteClient.js  
+│   │   └── 📁 user  
+│   │       ├── 📝 registerUser.js  
+│   │       ├── 📝 updateUser.js  
+│   │       ├── 📝 listUsers.js  
+│   │       ├── 📝 deleteUser.js  
+│   │       └── 📝 loginUser.js  
+│   ├── 📁 model  
+│   │   ├── 📝 Client.js  
+│   │   └── 📝 User.js  
+│   └── 📝 app.js  
+├── 📝 Dockerfile  
+├── 📝 .dockerignore  
+├── 📝 .env  
+├── 📝 .gitignore  
+├── 📝 package.json  
+├── 📝 package-lock.json  
+└── 📝 webpack.config.js  
 ```
 
 ### Api Rest
 #### Documentación con postman
 https://documenter.getpostman.com/view/7107972/2sAXjRW9ph
+
+### Despliegue PDN
+url = https://progress-builder-backend-production.up.railway.app/api
 
 ### Resumen de los Endpoints de la API de usuarios
 
