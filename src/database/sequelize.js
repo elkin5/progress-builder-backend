@@ -33,6 +33,9 @@ async function testConnection() {
     }
 }
 
-testConnection();
+// Ejecutar la prueba de conexión solo si no estamos en modo de prueba
+if (process.env.NODE_ENV !== 'test') {
+    testConnection();
+}
 
 module.exports = sequelize;
