@@ -1,5 +1,5 @@
 // models/User.js
-const { DataTypes } = require('sequelize');
+const {DataTypes} = require('sequelize');
 const sequelize = require('../database/sequelize'); // Importa la instancia de Sequelize
 
 // Definición del modelo User
@@ -28,7 +28,8 @@ const User = sequelize.define('User', {
     }
 }, {
     timestamps: true, // Incluye campos createdAt y updatedAt
-    tableName: 'users' // Nombre de la tabla en la base de datos
+    tableName: 'users', // Nombre de la tabla en la base de datos
+    // schema: 'sch_progress_builder'
 });
 
 module.exports = User;

@@ -1,5 +1,7 @@
 const User = require('../../model/User');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 const SECRET_KEY = 'clave_secreta'; // clave secreta segura
 
 async function loginUser(req, res) {

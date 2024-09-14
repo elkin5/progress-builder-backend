@@ -9,6 +9,10 @@ const { loginUser } = require('./domain/user/loginUser');
 const { listUsers } = require('./domain/user/listUsers');
 const { deleteUser } = require('./domain/user/deleteUser');
 const { updateUser } = require('./domain/user/updateUser');
+const { registerClient } = require('./domain/client/registerClient');
+const { updateClient } = require('./domain/client/updateClient');
+const { listClients } = require('./domain/client/listClients');
+const { deleteClient } = require('./domain/client/deleteClient');
 
 // Definir el puerto en el que el servidor escuchará las peticiones
 const PORT = process.env.PORT || 3000;
@@ -26,6 +30,12 @@ app.post('/api/users/login', loginUser);
 app.get('/api/users', listUsers);
 app.put('/api/users/:id', updateUser);
 app.delete('/api/users/:id', deleteUser);
+
+// Rutas de gestión de clientes
+app.post('/api/clients/register', registerClient);
+app.get('/api/clients', listClients);
+app.put('/api/clients/:id', updateClient);
+app.delete('/api/clients/:id', deleteClient);
 
 // Definir una ruta de ejemplo
 app.get('/', (req, res) => {
