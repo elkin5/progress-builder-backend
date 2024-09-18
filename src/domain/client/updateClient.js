@@ -1,4 +1,4 @@
-const Client = require('../../DAO/Client');
+const Client = require('../../repository/Client');
 
 async function updateClient(req, res) {
     const { id } = req.params;

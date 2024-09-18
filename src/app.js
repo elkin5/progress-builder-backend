@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/sequelize');
+const corsConfig = require('./config/corsConfig');
 const userRouter = require('./api/router'); // Importa el enrutador de rutas
 const app = express();
+
+// Configuración personalizada de CORS
+app.use(corsConfig);
 
 // Definir el puerto en el que el servidor escuchará las peticiones
 const PORT = process.env.PORT || 3000;

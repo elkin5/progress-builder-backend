@@ -14,8 +14,17 @@ Nodejs con Express
 ### Estructura de Archivos del Proyecto
 ```
 📦 progress-builder-backend  
+├── 📁 dist  
+├── 📁 node_modules  
+├── 📁 scripts  
 ├── 📁 src  
-│   ├── 📁 database  
+│   ├── 📁 __tests__  
+│   │   ├── 📁 database  
+│   │   └── 📁 user  
+│   ├── 📁 api  
+│   │   └── 📝 router.js  
+│   ├── 📁 config  
+│   │   ├── 📝 corsConfig.js  
 │   │   └── 📝 sequelize.js  
 │   ├── 📁 domain  
 │   │   ├── 📁 client  
@@ -29,17 +38,19 @@ Nodejs con Express
 │   │       ├── 📝 listUsers.js  
 │   │       ├── 📝 deleteUser.js  
 │   │       └── 📝 loginUser.js  
-│   ├── 📁 model  
+│   ├── 📁 repository  
 │   │   ├── 📝 Client.js  
 │   │   └── 📝 User.js  
 │   └── 📝 app.js  
-├── 📝 Dockerfile  
 ├── 📝 .dockerignore  
 ├── 📝 .env  
+├── 📝 .env.test  
 ├── 📝 .gitignore  
+├── 🐳 Dockerfile  
 ├── 📝 package.json  
-├── 📝 package-lock.json  
-└── 📝 webpack.config.js  
+├── 🔒 package-lock.json  
+├── 📖 README.md  
+└── 🧩 webpack.config.js
 ```
 
 ### Api Rest

@@ -5,12 +5,6 @@ const dotenv = require('dotenv');
 const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env';
 dotenv.config({ path: envFile });
 
-// Configuración de conexión a la base de datos PostgreSQL
-// const sequelize = new Sequelize('progressbuilder', 'admin', '123', {
-//     host: 'localhost',
-//     dialect: 'postgres', // Tipo de base de datos
-//     logging: false, // Desactiva el log de consultas SQL en la consola
-// });
 // Configura la conexión con la base de datos usando variables de entorno
 const sequelize = new Sequelize(
     process.env.DB_NAME,

@@ -1,4 +1,4 @@
-const User = require('../../DAO/User');
+const User = require('../../repository/User');
 
 async function updateUser(req, res) {
     const { id } = req.params;

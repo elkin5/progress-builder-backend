@@ -1,4 +1,4 @@
-const Client = require('../../DAO/Client');
+const Client = require('../../repository/Client');
 
 async function registerClient(req, res) {
     const { name, email, phone, identification, type } = req.body;
