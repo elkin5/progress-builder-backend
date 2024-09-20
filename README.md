@@ -37,7 +37,8 @@ Nodejs con Express
 │   │       ├── 📝 updateUser.js  
 │   │       ├── 📝 listUsers.js  
 │   │       ├── 📝 deleteUser.js  
-│   │       └── 📝 loginUser.js  
+│   │       ├── 📝 loginUser.js  
+│   │       └── 📝 getUserById.js  # Nuevo archivo para obtener usuario por ID
 │   ├── 📁 repository  
 │   │   ├── 📝 Client.js  
 │   │   └── 📝 User.js  
@@ -71,10 +72,11 @@ url = https://progress-builder-backend-production.up.railway.app/api
 | **DELETE**  | `/api/users/:id`      | Elimina un usuario del sistema por su ID.                 | N/A                                                                                                                                                      |
 
 ### Resumen de los Endpoints la API de clientes
-
-| Método HTTP | Ruta                          | Descripción                                                         | Ejemplo de Uso                                                                                                                                               |
-|-------------|-------------------------------|---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **POST**    | `/api/clients/register`       | Registra un nuevo cliente en el sistema.                            | Cuerpo: `{ "name": "Empresa XYZ", "email": "contacto@xyz.com", "phone": "123456789", "identification": "87654321", "type": "Legal" }`                        |
-| **GET**     | `/api/clients`                | Lista todos los clientes registrados en el sistema.                 | N/A                                                                                                                                                          |
-| **PUT**     | `/api/clients/:id`            | Actualiza la información de un cliente existente por su ID.          | Cuerpo: `{ "name": "Empresa Actualizada", "email": "nuevo_contacto@xyz.com", "phone": "987654321", "identification": "12345678", "type": "Natural" }`         |
-| **DELETE**  | `/api/clients/:id`            | Elimina un cliente del sistema por su ID.                           | N/A                                                                                                                                                          |
+| Método HTTP | Ruta                  | Descripción                                               | Ejemplo de Uso                                                                                                                                           |
+|-------------|-----------------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **POST**    | `/api/users/register` | Registra un nuevo usuario en el sistema.                  | Cuerpo: `{ "name": "Juan", "email": "juan@example.com", "password": "123456", "phone": "123456789", "identification": "12345678", "position": "admin" }` |
+| **POST**    | `/api/users/login`    | Autentica a un usuario existente y devuelve un token JWT. | Cuerpo: `{ "email": "juan@example.com", "password": "123456" }`                                                                                          |
+| **GET**     | `/api/users`          | Lista todos los usuarios registrados en el sistema.       | N/A                                                                                                                                                      |
+| **GET**     | `/api/users/:id`      | Obtiene un usuario específico por su ID.                  | N/A                                                                                                                                                      |
+| **PUT**     | `/api/users/:id`      | Actualiza la información de un usuario existente por ID.  | Cuerpo: `{ "name": "Juan Actualizado", "email": "juan.updated@example.com", "phone": "987654321", "identification": "87654321", "position": "user" }`    |
+| **DELETE**  | `/api/users/:id`      | Elimina un usuario del sistema por su ID.                 | N/A                                                                                                                                                      |
