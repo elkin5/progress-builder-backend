@@ -10,6 +10,7 @@ const { updateClient } = require('../domain/client/updateClient');
 const { listClients } = require('../domain/client/listClients');
 const { deleteClient } = require('../domain/client/deleteClient');
 const { getUserById } = require('../domain/user/getUserById');
+const { getClientById } = require('../domain/client/getClientById');
 
 // Rutas de gestión de usuarios
 router.post('/api/users/register', registerUser);
@@ -24,6 +25,7 @@ router.post('/api/clients/register', registerClient);
 router.get('/api/clients', listClients);
 router.put('/api/clients/:id', updateClient);
 router.delete('/api/clients/:id', deleteClient);
+router.get('/api/clients/:id', getClientById);
 
 // Ruta de ejemplo
 router.get('/', (req, res) => {
