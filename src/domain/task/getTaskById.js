@@ -1,6 +1,5 @@
 const Task = require('../../repository/Task');
 const Project = require('../../repository/Project');
-const Advance = require('../../repository/Advance');
 
 async function getTaskById(req, res) {
     const { task_id } = req.params;

@@ -26,6 +26,8 @@ const { updateAdvance } = require('../domain/advance/updateAdvance');
 const { getAdvanceById } = require('../domain/advance/getAdvanceById');
 const { listAdvances } = require('../domain/advance/listAdvances');
 const { deleteAdvance } = require('../domain/advance/deleteAdvance');
+const { uploadFile } = require('../domain/file/uploadFile');
+const upload = require('../config/multerConfig');
 
 
 // Rutas de gestión de usuarios
@@ -63,6 +65,9 @@ router.put('/api/advances/:advance_id', updateAdvance);
 router.get('/api/advances/:advance_id', getAdvanceById);
 router.get('/api/advances', listAdvances);
 router.delete('/api/advances/:advance_id', deleteAdvance);
+
+// Ruta para subir un archivo
+router.post('/api/files/upload', upload.single('file'), uploadFile);
 
 // Ruta de ejemplo
 router.get('/', (req, res) => {

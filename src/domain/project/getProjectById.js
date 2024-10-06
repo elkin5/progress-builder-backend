@@ -1,7 +1,5 @@
 const Project = require('../../repository/Project');
-const Task = require('../../repository/Task');
 const Client = require('../../repository/Client');
-const Advance = require('../../repository/Advance');
 
 async function getProjectById(req, res) {
     const { project_id } = req.params;

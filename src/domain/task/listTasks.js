@@ -1,7 +1,6 @@
 const Task = require('../../repository/Task');
 const Project = require('../../repository/Project');
 const Client = require('../../repository/Client');
-const Advance = require('../../repository/Advance');
 
 async function listTasks(req, res) {
     try {
