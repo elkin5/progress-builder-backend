@@ -22,7 +22,15 @@ async function loginUser(req, res) {
             return res.status(400).json({ error: 'Contraseña incorrecta' });
         }
 
-        const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
+        // Crear el payload del token, incluyendo el email y el tipo de usuario
+        const tokenPayload = {
+            userId: user.id,
+            email: user.email,
+            userType: user.position,
+            name: user.name
+        };
+
+        const token = jwt.sign(tokenPayload, SECRET_KEY, { expiresIn: '1h' });
 
         res.status(200).json({ token });
     } catch (err) {
