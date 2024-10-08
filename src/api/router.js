@@ -28,7 +28,10 @@ const { listAdvances } = require('../domain/advance/listAdvances');
 const { deleteAdvance } = require('../domain/advance/deleteAdvance');
 const { uploadFile } = require('../domain/file/uploadFile');
 const upload = require('../config/multerConfig');
-
+const { getProjectsByClient } = require('../domain/project/listProjectsByClient');
+const { getTasksByProject } = require('../domain/task/listTasksByProject');
+const { getAdvancesByTask } = require('../domain/advance/listAdvancesByTask');
+const { getFilesByAdvance } = require('../domain/file/listFilesByAdvance');
 
 // Rutas de gestión de usuarios
 router.post('/api/users/register', registerUser);
@@ -65,6 +68,15 @@ router.put('/api/advances/:advance_id', updateAdvance);
 router.get('/api/advances/:advance_id', getAdvanceById);
 router.get('/api/advances', listAdvances);
 router.delete('/api/advances/:advance_id', deleteAdvance);
+
+// Ruta para obtener proyectos por cliente
+router.get('/api/projects/by-client/:client_id', getProjectsByClient);
+// Ruta para obtener tareas por proyecto
+router.get('/api/tasks/by-project/:project_id', getTasksByProject);
+// Ruta para obtener avances por tarea
+router.get('/api/advances/by-tasks/:task_id', getAdvancesByTask);
+// Ruta para obtener archivos por avance
+router.get('/api/files/by-advance/:advance_id', getFilesByAdvance);
 
 // Ruta para subir un archivo
 router.post('/api/files/upload', upload.single('file'), uploadFile);
