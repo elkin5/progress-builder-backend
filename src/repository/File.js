@@ -1,32 +1,24 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize');
-const Task = require('./Task');
+const Advance = require('./Advance');
 
 const File = sequelize.define('File', {
-    file_id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
     file_path: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    task_id: {
+    advance_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: Task,
+            model: Advance,
             key: 'id',
+            onDelete: 'CASCADE',
         },
-    },
-    created_at: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
     },
 }, {
     tableName: 'files',
-    timestamps: false,
+    timestamps: true,
 });
 
 File.belongsTo(Advance, { foreignKey: 'advance_id', onDelete: 'CASCADE' });
