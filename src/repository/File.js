@@ -29,6 +29,6 @@ const File = sequelize.define('File', {
     timestamps: false,
 });
 
-File.belongsTo(Task, { foreignKey: 'id' });
+File.belongsTo(Advance, { foreignKey: 'advance_id', onDelete: 'CASCADE' });
 
 module.exports = File;

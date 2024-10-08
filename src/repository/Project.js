@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize');
 const Client = require('./Client');
-// const Task = require('./Task');
 
 const Project = sequelize.define('Project', {
     name: {
@@ -31,7 +30,6 @@ const Project = sequelize.define('Project', {
     timestamps: true,
 });
 
-Project.belongsTo(Client, { foreignKey: 'id' });
-// Project.hasMany(Task, { foreignKey: 'project_id' });
+Project.belongsTo(Client, { foreignKey: 'client_id' });
 
 module.exports = Project;

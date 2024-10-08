@@ -24,7 +24,6 @@ const Client = sequelize.define('Client', {
 }, {
     timestamps: true,
     tableName: 'clients',
-    // schema: 'sch_progress_builder'
 });
 
 module.exports = Client;

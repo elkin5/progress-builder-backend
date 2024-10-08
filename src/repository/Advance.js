@@ -16,6 +16,7 @@ const Advance = sequelize.define('Advance', {
         references: {
             model: Task,
             key: 'id',
+            onDelete: 'CASCADE',
         },
     },
 }, {
@@ -24,6 +25,6 @@ const Advance = sequelize.define('Advance', {
 });
 
 // Relación con la tarea (un avance pertenece a una tarea)
-Advance.belongsTo(Task, { foreignKey: 'id' });
+Advance.belongsTo(Task, { foreignKey: 'task_id', onDelete: 'CASCADE' });
 
 module.exports = Advance;

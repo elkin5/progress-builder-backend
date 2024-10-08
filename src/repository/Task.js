@@ -29,7 +29,7 @@ const Task = sequelize.define('Task', {
 });
 
 // Relación con el proyecto
-Task.belongsTo(Project, { foreignKey: 'id' });
+Task.belongsTo(Project, { foreignKey: 'project_id' });
 
 // Relación con los avances (una tarea tiene muchos avances)
 // Task.hasMany(Advance, { foreignKey: 'task_id' });  // Una tarea tiene muchos avances
