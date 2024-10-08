@@ -25,9 +25,9 @@ async function loginUser(req, res) {
         // Crear el payload del token, incluyendo el email y el tipo de usuario
         const tokenPayload = {
             userId: user.id,
-            email: user.email,
+            userEmail: user.email,
             userType: user.position,
-            name: user.name
+            userName: user.name
         };
 
         const token = jwt.sign(tokenPayload, SECRET_KEY, { expiresIn: '1h' });
