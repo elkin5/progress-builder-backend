@@ -17,9 +17,9 @@ async function uploadFile(req, res) {
             return res.status(404).json({ error: 'Avance no encontrado' });
         }
 
-        // Guardar la ruta del archivo en la base de datos
+        // Guardar la ruta del archivo en la base de datos con una URL accesible
         const file = await File.create({
-            file_path: req.file.path,
+            file_path: req.file.filename,
             advance_id: advance_id,
         });
 

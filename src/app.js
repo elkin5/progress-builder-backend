@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/sequelize');
 const corsConfig = require('./config/corsConfig');
-const userRouter = require('./api/router'); // Importa el enrutador de rutas
+const userRouter = require('./api/router');
+const {join} = require("node:path"); // Importa el enrutador de rutas
 const app = express();
 
 // Configuración personalizada de CORS
@@ -13,6 +14,9 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware para parsear JSON
 app.use(bodyParser.json());
+
+// Definir la ruta estática para los archivos públicos
+app.use('/api/files/public', express.static(join(__dirname, '../public/uploads')));
 
 // Sincronizar modelos con la base de datos
 sequelize.sync({ alter: true }) // alter: true actualizará la tabla si hay cambios
