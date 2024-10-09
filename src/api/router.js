@@ -32,6 +32,9 @@ const { getProjectsByClient } = require('../domain/project/listProjectsByClient'
 const { getTasksByProject } = require('../domain/task/listTasksByProject');
 const { getAdvancesByTask } = require('../domain/advance/listAdvancesByTask');
 const { getFilesByAdvance } = require('../domain/file/listFilesByAdvance');
+const {countUsersByType} = require("../domain/user/countUsersByType");
+const {countClientsByType} = require("../domain/client/countClientsByType");
+const { countProjectTaskByClient } = require("../domain/project/countProjectTasksByClient");
 
 // Rutas de gestión de usuarios
 router.post('/api/users/register', registerUser);
@@ -80,6 +83,11 @@ router.get('/api/files/by-advance/:advance_id', getFilesByAdvance);
 
 // Ruta para subir un archivo
 router.post('/api/files/upload', upload.single('file'), uploadFile);
+
+// Ruta para contar usuarios por tipo
+router.get('/api/users/query/count-by-type', countUsersByType);
+router.get('/api/clients/query/count-by-type', countClientsByType);
+router.get('/api/project/query/count-tasks-by-client/:client_id', countProjectTaskByClient);
 
 // Ruta de ejemplo
 router.get('/', (req, res) => {

@@ -12,10 +12,6 @@ async function getTaskById(req, res) {
                     model: Project,
                     attributes: ['name', 'description', 'start_date', 'end_date'],
                 },
-                // {
-                //     model: Advance,
-                //     attributes: ['name', 'description', 'created_at'],
-                // }
             ],
         });
 
