@@ -87,7 +87,7 @@ router.post('/api/files/upload', upload.single('file'), uploadFile);
 // Ruta para contar usuarios por tipo
 router.get('/api/users/query/count-by-type', countUsersByType);
 router.get('/api/clients/query/count-by-type', countClientsByType);
-router.get('/api/project/query/count-tasks-by-client/:client_id', countProjectTaskByClient);
+router.get('/api/project/query/count-tasks-by-project/:project_id', countProjectTaskByClient);
 
 // Ruta de ejemplo
 router.get('/', (req, res) => {
