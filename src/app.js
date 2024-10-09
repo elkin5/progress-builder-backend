@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Definir la ruta estática para los archivos públicos
-app.use('/api/files/public', express.static(join(__dirname, '../public/uploads')));
+app.use('/api/files/public', express.static(join('../public/uploads')));
 
 // Sincronizar modelos con la base de datos
 sequelize.sync({ alter: true }) // alter: true actualizará la tabla si hay cambios
